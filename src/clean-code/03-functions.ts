@@ -1,28 +1,26 @@
 (() => {
-
-    // función para obtener información de una película por Id
-    function getInformationMovie( movieId: string ) {
-        console.log({ movieId });
+    
+    function getMovieById( id: string ) {
+        console.log({ id });
     }
 
-    // función para obtener información de los actores de una película - Actors o Cast // id = movieId getMovieCast
-    function getMovieActors( movieId: string ) {
-        console.log({ movieId });
+    function getActorsByMovieId( id: string ) {
+        console.log({ id });
     }
 
     // funcion para obtener el bio del actor por el id
-    function getBioOfActor( ActorId: string ) {
-        console.log({ ActorId });
+    function getActorBioById( id: string ) {
+        console.log({ id });
     }
     
     // Crear una película
-    interface props{
+    interface movieProperties{
         cast:string[],
         description: string,
         rating: number,
         title: string,
     }
-    function createMovie({title, description, rating, cast}:props ) {
+    function createMovie({title, description, rating, cast}:movieProperties ) {
         console.log({ title, description, rating, cast });
     }
 
@@ -40,15 +38,14 @@
     }
 
     
-  const getPayAmount = ({ isDead = false, isSeparated = true, isRetired = false }) => {
-    let result;
+  const getPayAmount = ({ isDead = false, isSeparated = true, isRetired = false }) :number => {
     if ( isDead ) {
-        return  1500;
+      return  1500;
     } 
-     if ( isSeparated ) {
-         return  2500;
-     } 
-     return isRetired?300:400;
+    if ( isSeparated ) {
+      return  2500;
+    } 
+    return isRetired?3000:4000;
     
 }
 
